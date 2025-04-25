@@ -72,6 +72,7 @@ The backend of this template uses the following dependencies:
   - User profile management (CRUD operations).
   - State management with Redux on the frontend.
 - **CRUD Operations**: Implemented for user accounts with the ability to create, read, update, and delete accounts.
+- **Routing & navigation**: basic setup for routing and navigation.
 
 ---
 
