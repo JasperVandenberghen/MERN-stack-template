@@ -7,13 +7,10 @@ import rateLimit from 'express-rate-limit';
 import { uploadImageStream } from '../services/cloudinary.js';
 import { deleteImage } from '../services/cloudinary.js';
 import { sendEmail } from '../services/sendGrid.js';
-import verifyToken from '../middleware/verifyToken.js'; // Importing the verifyToken middleware
+import verifyToken from '../middleware/verifyToken.js';
 
 const router = express.Router();
 const upload = multer(); 
-
-// TODO: add apiKeyCheck here as well
-// TODO: review error handling
 
 /**
  * Creates a new user instance with the provided Firebase UID, email, and display name.
@@ -99,7 +96,7 @@ router.post('/login', verifyToken, async (req, res) => {
     res.status(200).json({
       message: 'Login successful',
       user,
-      token: req.headers.authorization,  // You might want to send the token back here or elsewhere
+      token: req.headers.authorization,
     });
   } catch (error) {
     console.error('Error logging in:', error);
@@ -210,7 +207,7 @@ router.delete('/delete-account', verifyToken, async (req, res) => {
     // Delete the user's profile picture from Cloudinary if it exists
     if (user.profilePicture) {
       const publicId = user.profilePicture.split('/').pop().split('.')[0];  // Extract publicId from URL
-      await deleteImage(publicId);  // Call the deleteImage function to remove the image
+      await deleteImage(publicId); 
     }
 
     // Delete the user from Firebase and MongoDB
@@ -274,14 +271,10 @@ router.put('/profile', verifyToken, upload.single('profilePicture'), async (req,
   try {
     const user = await User.findOne({ firebaseUID: decodedToken.uid });
 
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
+    if (!user) return res.status(404).json({ message: 'User not found' });
 
-    // Update the user's displayName if it's provided
-    if (displayName) {
-      user.displayName = displayName;
-    }
+    if (displayName) user.displayName = displayName;
+    
 
     // If a profile picture was uploaded, handle the image upload to Cloudinary
     if (req.file) {
