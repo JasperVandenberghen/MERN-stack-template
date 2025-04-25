@@ -67,7 +67,7 @@ The backend of this template uses the following dependencies:
 
 ### Core Functionality:
 - **Account System**: A complete authentication system, including:
-  - User registration and login (with JWT for token-based authentication).
+  - User registration and login using Firebase Authentication.
   - Password reset functionality.
   - User profile management (CRUD operations).
   - State management with Redux on the frontend.
