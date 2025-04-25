@@ -26,19 +26,6 @@ const NotificationsMenu = () => {
 
   const notifications = [
     {
-      text: 'Your favorite team just won a game!',
-      icon: (
-        <Scoreboard
-          sx={{
-            color:
-              theme.palette.mode === 'dark'
-                ? theme.palette.text.tertiary
-                : theme.palette.primary.main,
-          }}
-        />
-      ),
-    },
-    {
       text: 'You have a new friend request!',
       icon: (
         <PersonAdd
@@ -52,35 +39,9 @@ const NotificationsMenu = () => {
       ),
     },
     {
-      text: 'New players have joined your club!',
-      icon: (
-        <EmojiPeople
-          sx={{
-            color:
-              theme.palette.mode === 'dark'
-                ? theme.palette.text.tertiary
-                : theme.palette.primary.main,
-          }}
-        />
-      ),
-    },
-    {
       text: 'You have a new message!',
       icon: (
         <Message
-          sx={{
-            color:
-              theme.palette.mode === 'dark'
-                ? theme.palette.text.tertiary
-                : theme.palette.primary.main,
-          }}
-        />
-      ),
-    },
-    {
-      text: 'Your favorite player just scored a goal!',
-      icon: (
-        <SportsSoccer
           sx={{
             color:
               theme.palette.mode === 'dark'
