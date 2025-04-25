@@ -12,7 +12,6 @@ const cacheDataSlice = createSlice({
   reducers: {
     setCachedData: (state, action) => {
       const { url, data, timestamp } = action.payload;
-      console.log('Setting cached data for URL:', url, data);
       state.cache[url] = { data, timestamp };
     },
     removeCachedData: (state, action) => {
@@ -31,10 +30,7 @@ export const getCachedData = (url, cacheExpiration) => {
   const cached = getCache().cache[url];
   if (!cached) return null;
 
-  console.log('Cached data:', cached);
-
   const { timestamp, data } = cached;
-  console.log('Cached timestamp:', timestamp);
   if (timestamp + cacheExpiration < Date.now()) {
     return null;
   }

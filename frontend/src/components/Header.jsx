@@ -173,7 +173,7 @@ const Header = () => {
                   },
                 }}
               >
-                {/* <NotificationsMenu /> */}
+                <NotificationsMenu />
               </Badge>
               <OptionsMenu />
               <Box sx={{ paddingLeft: '0.5em', width: '1.5em' }}>

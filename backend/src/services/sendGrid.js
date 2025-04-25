@@ -24,7 +24,7 @@ export const sendEmail = async (to, subject, text, html = '') => {
 
   const msg = {
     to,
-    from: 'fade-aloe-tacking@duck.com', // TODO: change this when domain is registered
+    from: 'email@email.com', // TODO: change this to a real email address
     subject,
     text,
     html,
