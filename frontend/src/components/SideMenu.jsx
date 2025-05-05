@@ -1,10 +1,9 @@
 import { memo } from 'react';
-import { Box, Drawer } from '@mui/material/';
+import { Drawer } from '@mui/material/';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import MenuItems from './MenuItems';
-import CardAlert from './CardAlert';
 
 const SideMenu = () => {
   const theme = useTheme();
@@ -30,9 +29,6 @@ const SideMenu = () => {
           }}
         >
           <MenuItems />
-          <Box sx={{ marginBottom: '5rem' }}>
-            <CardAlert />
-          </Box>
         </Drawer>
       )}
     </>
