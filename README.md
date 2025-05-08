@@ -1,6 +1,6 @@
 # MERN Web Application Template
 
-This repository contains a full-stack MERN (MongoDB, Express, React, Node.js) web application template, designed to get you started quickly with modern web development tools and best practices. It includes both the frontend and backend with the following features:
+This repository contains a full-stack MERN (MongoDB, Express, React, Node.js) web application template, designed to get started quickly with modern web development tools and best practices. It includes both the frontend and backend with the following features:
 
 ## Features
 
