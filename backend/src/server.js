@@ -20,7 +20,7 @@ app.use(express.json());
 // Routes
 app.get('/', (req, res) => {
     // TODO: add status info about the server here later
-  res.json({ Aftermatch_API: 'available' });
+  res.json({ API: 'available' });
 
 });
 app.use('/api/auth', authRoutes);
